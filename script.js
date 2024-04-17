@@ -54,8 +54,27 @@ function play() {
   //player1.x = mouseX;
   //player1.y = mouseY;
   player1.display();
+  player1.move();
+  
+  if(keyIsPressed){
+    switch(keyCode){
+      case UP_ARROW:
+        player1.thrust(); // accelerate
+        break;
+      case DOWN_ARROW:
+        player1.brake();
+        break;
+      case LEFT_ARROW:
+        player1.angle += .02; //turn left
+        break;
+      case RIGHT_ARROW:
+        player1.angle -= .02; //turn right
+        break;
+        default:
+          console.log("use the arrow keys to move");
+     }
+  }
 }
-
 function gameOver() {
   // this is what you see when the game ends
   background(0);
@@ -76,29 +95,28 @@ function mousePressed() {
   console.log(gameState);
 }
 
-function keyPressed(){
-  switch(keyCode){
-    case UP_ARROW :
-      player1.y -= 30;// sub 38 from .y
-      player1.angle = 0;
-      if(player1.y<0) player1.y=height;
-      break;
-    case DOWN_ARROW:
-      player1.y += 30;
-      player1.angle = PI;
-      if(player1.y>height) player1.y=0;
-      break;
-    case LEFT_ARROW:
-      player1.x -= 30;
-      player1.angle= PI + PI/2;
-      if(player1.x<0) player1.x = width;
-      break;
-    case RIGHT_ARROW:
-      player1.x +=30;
-      player1.angle= PI/2;
-      if(player1.x>width) player1.x=0;
-      break;
-    default:
-      console.log("use the arrow keys to move!");
-  }
-}
+//function keyPressed(){
+  //switch(keyCode){
+   // case UP_ARROW :
+    //  player1.y -= 30;// sub 38 from .y
+     // player1.angle = 0;
+     // if(player1.y<0) player1.y=height;
+     // break;
+    //case DOWN_ARROW:
+    //  player1.y += 30;
+     // player1.angle = PI;
+     // if(player1.y>height) player1.y=0;
+     // break;
+   // case LEFT_ARROW:
+    //  player1.x -= 30;
+    //  player1.angle= PI + PI/2;
+     // if(player1.x<0) player1.x = width;
+      //break;
+   // case RIGHT_ARROW:
+    //  player1.x +=30;
+     // player1.angle= PI/2;
+     // if(player1.x>width) player1.x=0;
+     // break;
+   // default:
+     // console.log("use the arrow keys to move!");
+  
