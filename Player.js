@@ -64,7 +64,7 @@ function Player(tempX, tempY) {
     let horiz = Math.sin(this.angle);
     let vert = Math.cos(this.angle);
 
-    this.xSpeed += .02 * horz; // modify the basic acceleration factor (.02) by the amount of rotation
+    this.xSpeed += .02 * horiz; // modify the basic acceleration factor (.02) by the amount of rotation
     this.ySpeed -= .02 * vert;
   }
   this.brake = function() {
