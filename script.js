@@ -4,8 +4,9 @@
  * Anahi Paz- vs 1
  * Use this template to get started creating a simple 2D game for the web using P5.js. 
  */
-var gameState = "splash";
-var player1;
+var gameState = "splash";//lab13
+var player1;//lab14
+var gameTimer;//lab15
 
 function setup() {
 
@@ -13,6 +14,8 @@ function setup() {
   player1= new Player(width/2, height* 7/8);
   console.log(player1);
 
+  gameTimer = new Timer(5000); // 5 second timer
+  console.log(gameTimer);
 }
 
 function draw() {
@@ -55,7 +58,15 @@ function play() {
   //player1.y = mouseY;
   player1.display();
   player1.move();
+
+  if (gameTimer.isFinished()) {
+    gameState = "gameOver";
+  }
   
+  textAlign(LEFT);
+  text("elapsed time: " + gameTimer.elapsedTime, 40, 100);
+  // show elapsed time in top left corner
+
   if(keyIsPressed){
     switch(keyCode){
       case UP_ARROW:
@@ -87,6 +98,7 @@ function gameOver() {
 function mousePressed() {
   if (gameState === "splash") {
     gameState = "play";
+    gameTimer.start();
   } else if (gameState === "play") {
     gameState = "gameOver";
   } else if (gameState === "gameOver") {

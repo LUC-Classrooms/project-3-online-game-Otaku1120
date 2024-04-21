@@ -29,7 +29,7 @@ function Timer(tempTime){
   this.w = 200; // for display
   this.h = 75;
   
-  this.start = function(){
+  this.start = function(){//here
     this.startTime = millis(); // get the current clock 
     this.running = true; // set the flag
   }
