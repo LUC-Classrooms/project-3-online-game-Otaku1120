@@ -68,11 +68,11 @@ function Player(tempX, tempY) {
     this.ySpeed -= .02 * vert;
   }
   this.brake = function() {
-  if(this.xSpeed > 0)
-     this.xSpeed -= .01; // slow down!
+    if(this.xSpeed > 0)
+      this.xSpeed -= .01; // slow down!
     else this.xSpeed += .01 // speed was less than 0, so bring it back up
-  if (this.ySpeed > 0)
-    this.ySpeed -= 0; // slow down on y axis, too!
+    if (this.ySpeed > 0)
+      this.ySpeed -= 0; // slow down on y axis, too!
     else this.ySpeed += .01; // bring up to 0 if we went too far
-    }
+  }
 }

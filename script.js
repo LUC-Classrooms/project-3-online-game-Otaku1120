@@ -65,14 +65,14 @@ function play() {
         player1.brake();
         break;
       case LEFT_ARROW:
-        player1.angle += .02; //turn left
+        player1.angle -= .02; //turn left
         break;
       case RIGHT_ARROW:
-        player1.angle -= .02; //turn right
+        player1.angle += .02; //turn right
         break;
         default:
           console.log("use the arrow keys to move");
-     }
+    }
   }
 }
 function gameOver() {
