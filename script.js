@@ -19,7 +19,7 @@ function setup() {
   testBox = new Box(width/2, height/3);
   //console.log(player1);
 
-  gameTimer = new Timer(5000); // 5 second timer
+  gameTimer = new Timer(30000); // 5 second timer
   dropTimer = new Timer(1000);
   //console.log(gameTimer);
  
@@ -83,10 +83,10 @@ function play() {
     presents[i].move(); // make it drop
     presents[i].spin() // make it rotate
 
-    if(presents[i].y > height) { // present went below the canvas
-      presents.splice(i, 1); // remove 1 element from from "presents" at index 'i'
-      score--; // decrement score by 1
-    }
+    //if(presents[i].y > height) { // present went below the canvas
+      //presents.splice(i, 1); // remove 1 element from from "presents" at index 'i'
+     // score--; // decrement score by 1
+    //}
     
     let d = dist(presents[i].x, presents[i].y, player1.x, player1.y);
     if (d < 50) {
@@ -97,7 +97,7 @@ function play() {
   } //end of for ()loop
 
   textAlign(LEFT);
-  text("elapsed time: " + gameTimer.elapsedTime, 20, 20);
+  text("Time remaining: " + Math.trunc(gameTimer.time - gameTimer.elapsedTime)/100, 20, 20);
   // show elapsed time in top left corner
   text("Score: " + score, 20, 40);
 
