@@ -6,6 +6,61 @@ function Player(tempX, tempY) {
   this.angle = 0;
   this.xSpeed = 0;
   this.ySpeed = 0;
+this.d = 100
+
+  this.seal=function(){
+// creating seal
+
+push(); // create a new drawing layer
+translate(this.x, this.y); // shift the origin point
+// all shapes are now located relative to (0,0)
+rotate(this.angle); // spin the object around the origin point
+
+//seal head
+fill(106,136,156)
+ellipse(0 - this.d / 2, 0 - this.d / 3.5, this.d / 1.8, this.d / 1.7);
+
+//face
+noStroke()
+fill(0); // eyes
+ellipse(0 + this.d/-1.9, 0 - this.d/2.1, this.d/10, this.d/10); //top eye
+ellipse(0 - this.d/1.9, 0 - this.d/5.0, this.d/10, this.d/10); //bottom eye
+
+//mouth shape
+noStroke()
+fill(94, 113, 106)
+ellipse(0 + this.d/-2.5, 0 - this.d/3., this.d/5, this.d/5);
+
+//nose
+fill("black")
+arc(0 - this.d/ 2.2, 0 - this.d/ 3, this.d/ 15, this.d/ 15, 3* PI / 2, PI / 2);
+
+//fins
+fill(106,136,156);
+noStroke();
+ellipse(5, -10, 40, 50);// low fin 
+ellipse(5, -40, 40, 55)//top fin
+
+// body
+noStroke();
+fill(106,136,156);
+ellipse(19,-25, this.d*1, this.d*-.6);
+
+//body spot
+fill("white")
+noStroke();
+ellipse(25, -25, 60, 35);
+
+
+//tail
+fill(106,136,156)
+rect (60, -35,20,20);
+//strip strokeWeight (2);
+stroke(0); // black line (60, -25, 80, - 25);
+
+pop(); // Seal
+
+}
 
   this.display = function () {
     push(); // create a drawing layer

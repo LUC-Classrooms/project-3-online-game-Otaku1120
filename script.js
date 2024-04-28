@@ -45,7 +45,8 @@ function draw() {
 
 function splash() {
  // this is what you would see when the game starts
-  background(	0, 159, 225);
+  background(	128, 218, 255);
+ 
   textAlign(CENTER);
   textSize(16);
   text("Let's Play a Game!", width / 2, height / 2);
@@ -58,14 +59,26 @@ function splash() {
 function play() {
    // this is what you see when the game is running 
   background(0, 215, 225);
-  fill(0, 0, 200)
+  background(9, 4, 106); //upper half Dark blue sky
+  //Lower half water blue
+  fill(0, 191, 255); 
+  rect(0,200, width, height);// lower half rect.
+  noStroke();
+  //waves
+  ellipse(75, 230, 100, 100);
+  ellipse(175, 230, 100, 100);
+  ellipse(275, 230, 100, 100);
+  ellipse(375, 230, 100, 100);
+  ellipse(475, 230, 100, 100);
+  ellipse(575, 230, 100, 100);
+
   textAlign(CENTER);
   textSize(16);
-  text("This is where the Game happens", width / 2, height / 2);
+  text("This is where the Game happens", width / 2.5, height / 2.5);
   //mouse controls
   //player1.x = mouseX;
   //player1.y = mouseY;
-  player1.display();
+  player1.seal();
   player1.move();
 
   if (gameTimer.isFinished()) {
