@@ -45,7 +45,7 @@ function draw() {
 
 function splash() {
  // this is what you would see when the game starts
-  background(200);
+  background(	0, 159, 225);
   textAlign(CENTER);
   textSize(16);
   text("Let's Play a Game!", width / 2, height / 2);
@@ -57,7 +57,7 @@ function splash() {
 
 function play() {
    // this is what you see when the game is running 
-  background(0, 200, 0);
+  background(0, 215, 225);
   fill(0, 0, 200)
   textAlign(CENTER);
   textSize(16);
@@ -122,11 +122,11 @@ function play() {
 }
 function gameOver() {
   // this is what you see when the game ends
-  background(0);
-  fill(255, 0, 0)
+  background(	0, 117, 123);
+  fill("White")
   textAlign(CENTER);
   textSize(16);
-  text("Game Over!", width / 2, height / 2);
+  text("Game over", width / 2, height / 2);
   text("Your final score: " + score, width/2, height * 2/3);
 }
 
