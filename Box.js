@@ -22,14 +22,28 @@ function Box(_x, _y){
     push();
     translate(this.x, this.y);
     rotate(this.angle);
+// Draw fish
+    // Body
+    fill(28, 172, 120); // Greenish color
+    ellipse(0, 0, 50, 30);
 
+    // Tail
+    triangle(-25, 0, -40, -15, -40, 15);
+    curve(-5, -15, 0, 0, 0, 10, -5, 20);
+
+    // Eyes
+    fill(0); // Black color
+    ellipse(15, -5, 5, 5);
+
+    
+    
+    // Draw ribbons
     rectMode(CENTER);
     fill(this.boxColor);
-    rect(0, 0, 40); // 40px square
 
+    rectMode(CENTER);
     fill(this.ribbonColor);
-    rect(0, 0, 40, 10); // horizontal ribbon
-    rect(0, 0, 10, 40); // vertical ribbon
+    
 
     pop();
 
